@@ -1,16 +1,16 @@
 
-#include <Arduino.h>
 #include "Led.h"
 
-Led::Led(const uint8_t pin) {
- _pin = pin;
- pinMode(_pin, OUTPUT);
+
+Led::Led(uint8_t pin) {
+ _pin = pin; 
+ DDRB = DDRB |=_BV(_pin); 
 }
 
 void Led::on() {
-  digitalWrite(_pin, HIGH);    
+  PORTB |= _BV(_pin);
 }
 
 void Led::off() {
-  digitalWrite(_pin, LOW);
+  PORTB &= ~_BV(_pin);
 }

@@ -1,8 +1,7 @@
 #ifndef OO_LED
 #define OO_LED
 
-#include <arduino.h>
-
+#include <avr/io.h>
 class Led {
   private: 
   uint8_t _pin;

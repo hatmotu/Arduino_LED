@@ -1,15 +1,15 @@
-#include <Arduino.h>
 #include <Led.h>
+#include <avr/io.h>
+#include <util/delay.h>
 
+Led statusLed(5);
 
-Led statusLed(LED_BUILTIN);
+int main() {
 
-void setup() {  
-}
-
-void loop() {
-  statusLed.on();
-  delay(1000);
-  statusLed.off();
-  delay(1000);
+  while(true) {
+    statusLed.on();
+    _delay_ms(1000);
+    statusLed.off();
+    _delay_ms(1000);
+  }
 }
